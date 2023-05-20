@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 18:08:18 by seono             #+#    #+#             */
-/*   Updated: 2023/05/20 18:08:21 by seono            ###   ########.fr       */
+/*   Created: 2023/05/20 19:08:31 by seono             #+#    #+#             */
+/*   Updated: 2023/05/20 19:28:59 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_H
+# define FT_H
 
-void ft_bzero(void *s, size_t n)
-{
-	while (n > 0)
-	{
-		*s = '\0';
-		s++;
-		n--;
-	}
-}
+int	ft_isalpha(int c);
+int ft_isdigit(int c);
+int ft_isalnum(int c);
+int ft_isascii(int c);
+int ft_isprint(int c);
+
+#endif
