@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 08:17:52 by marvin            #+#    #+#             */
-/*   Updated: 2023/05/24 18:39:27 by marvin           ###   ########.fr       */
+/*   Created: 2023/05/20 18:03:11 by seono             #+#    #+#             */
+/*   Updated: 2023/05/24 19:07:40 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void *memset(void *s, int c, size_t n)
+void *ft_memset(void *s, int c, size_t n)
 {
 	unsigned char *p;
 
 	p = (unsigned char *)s;
 	while (n > 0)
-	{	
-		*p = (unsigned char *)c;
+	{
+		*p = (unsigned char)c;
 		p++;
 		n--;
 	}
