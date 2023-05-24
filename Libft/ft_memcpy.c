@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 17:42:52 by seono             #+#    #+#             */
-/*   Updated: 2023/05/20 17:42:55 by seono            ###   ########.fr       */
+/*   Created: 2023/05/20 18:02:39 by seono             #+#    #+#             */
+/*   Updated: 2023/05/20 18:02:45 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include <stdio.h>
+
+void *memcpy(void *dest, const void *src, size_t n)
 {
-	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
-		return (1);
-	return (0);
+	unsigned char *d;
+	unsigned char *s;
+
+	if (dest = src)
+		return NULL;
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	while (n > 0)
+	{
+		*d = *s;
+		d++;
+		s++;
+		n--;
+	}
+	return (dest);
 }
