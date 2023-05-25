@@ -6,18 +6,18 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 17:43:27 by seono             #+#    #+#             */
-/*   Updated: 2023/05/24 19:17:06 by seono            ###   ########.fr       */
+/*   Updated: 2023/05/25 19:10:56 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {
 	size_t i;
 
 	i = 0;
-    while (*s != '\0')
+	while (*s != '\0')
 	{
 		i++;
 		s++;

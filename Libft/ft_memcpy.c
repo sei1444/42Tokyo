@@ -6,11 +6,12 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:02:39 by seono             #+#    #+#             */
-/*   Updated: 2023/05/24 19:00:44 by seono            ###   ########.fr       */
+/*   Updated: 2023/05/25 16:34:40 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
