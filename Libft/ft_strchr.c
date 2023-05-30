@@ -25,7 +25,5 @@ char *ft_strchr(const char *s, int c)
 			return (str);
 		str++;
 	}
-	if (*str == con)
-		return (str);
-	return (0);
+	return (NULL);
 }

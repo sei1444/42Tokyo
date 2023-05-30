@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 18:07:52 by seono             #+#    #+#             */
-/*   Updated: 2023/05/25 16:34:55 by seono            ###   ########.fr       */
+/*   Created: 2023/05/29 11:51:50 by marvin            #+#    #+#             */
+/*   Updated: 2023/05/29 15:52:33 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char *ft_strtrim(char const *s1, char const *set)
 {
     int i;
-    int ptrSize;
+    int start;
+    int end;
     char *ptr;
 
-    ptrSize = ft_strlen(s);
-    ptr = NULL;
-    ptr = malloc(sizeof(char) * (ptrSize + 1));
+    start = 0;
+    end = ft_strlen(s1) - 1;
+    while (s1[start] != NULL && ft_strchr(set, s1[start]) != NULL)
+        start++;
+    while (start < end && ft_strchr(set, s1[end]) != NULL)
+        end--;
+    ptr = malloc(sizeof(char) * (end - start + 1));
     if (ptr == NULL)
         return (NULL);
     i = 0;
-    while (s[i] != '\0')
+    while (start + i < end)
     {
-        ptr[i] = s[i];
+        ptr[i] = s1[start + i];
         i++;
     }
-    ptr[i] = '\0';
     return (ptr);
 }
