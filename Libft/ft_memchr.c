@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:05:55 by seono             #+#    #+#             */
-/*   Updated: 2023/05/25 16:34:34 by seono            ###   ########.fr       */
+/*   Updated: 2023/05/30 15:11:49 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
-    int i;
+    size_t i;
     unsigned char ch;
     unsigned char *str;
 

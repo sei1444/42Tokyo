@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:07:11 by seono             #+#    #+#             */
-/*   Updated: 2023/05/25 16:33:57 by seono            ###   ########.fr       */
+/*   Updated: 2023/05/30 15:06:59 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@ int atoi(const char *nptr)
     int unsigned_num;
 
     while (*nptr == ' ' || *nptr == '\t')
-    {
-        *nptr++;
-    }
+        nptr++;
     sign = 1;
     if (*nptr == '-')
     {
         sign = -1;
-        *nptr++;
+        nptr++;
     }
     else if (*nptr == '+')
-        *nptr++;
+        nptr++;
     unsigned_num = 0;
     while ('0' <= *nptr && *nptr <= '9')
     {
