@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:36:12 by marvin            #+#    #+#             */
-/*   Updated: 2023/05/29 11:51:23 by marvin           ###   ########.fr       */
+/*   Updated: 2023/06/03 20:51:35 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ char *ft_strjoin(char const *s1, char const *s2)
         return (NULL);
     i = 0;
     j = 0;
-    while (s1[i] != '\0')
+    while (s1 != NULL && s1[i] != '\0')
     {
         ptr[i] = s1[i];
         i++;
     }
-    while (s2[j] != '\0')
+    while (s2 != NULL && s2[j] != '\0')
     {
         ptr[i + j] = s2[j];
         j++;

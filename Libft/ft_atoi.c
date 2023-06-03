@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:07:11 by seono             #+#    #+#             */
-/*   Updated: 2023/05/30 17:56:43 by seono            ###   ########.fr       */
+/*   Updated: 2023/06/03 20:31:29 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int ft_atoi(const char *nptr)
 	int digit;
     long unsigned_num;
 
-    while (*nptr == ' ' || *nptr == '\t')
+    while (*nptr == ' ' || *nptr == '\t' || *nptr == '\n' || *nptr == '\v' || *nptr == '\f' || *nptr == '\r')
         nptr++;
     sign = 1;
     if (*nptr == '-')

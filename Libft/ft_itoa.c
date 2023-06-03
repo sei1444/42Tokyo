@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:27:16 by marvin            #+#    #+#             */
-/*   Updated: 2023/06/02 17:30:43 by marvin           ###   ########.fr       */
+/*   Updated: 2023/06/03 21:18:03 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,16 @@ static int str_size(long num)
     return (count);
 }
 
-static void handle_zero(char *str)
-{
+static char *handle_zero()
+{	
+	char *str;
+
     str = malloc(sizeof(char) * 2);
+	if (str == NULL)
+		return(NULL);
     str[0] = '0';
     str[1] = '\0';
+	return(str);
 }
 
 char *ft_itoa(int n)
@@ -45,12 +50,11 @@ char *ft_itoa(int n)
 
     num = (long)n;
     if (num == 0)
-    {
-        handle_zero(str);
-        return (str);
-    }
+        return(handle_zero());
     count = str_size(num);
     str = malloc(sizeof(char) * (count + 1));
+	if (str == NULL)
+		return (NULL);
     str[count] = '\0';
     if (num < 0)
     {

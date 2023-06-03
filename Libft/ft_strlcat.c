@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:50:04 by seono             #+#    #+#             */
-/*   Updated: 2023/05/25 21:17:27 by seono            ###   ########.fr       */
+/*   Updated: 2023/06/03 21:52:22 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t d;
 	size_t s;
 
-	i = 0;
 	d = ft_strlen(dst);
 	s = ft_strlen(src);
 	if (d >= dstsize)
 		return (dstsize + s);
+	i = 0;
 	while (i < dstsize - d - 1 && src[i] != '\0')
 	{
 		dst[d + i] = src[i];
@@ -31,3 +31,27 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[d + i] = '\0';
 	return (d + s);
 }
+
+//strlenでnull処理をしていないときにOKが出るバージョン
+
+// size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+// {
+// 	size_t i;
+// 	size_t d;
+// 	size_t s;
+
+	// if (dst == NULL && dstsize == 0)
+	// 	return 0;
+// 	d = ft_strlen(dst);
+// 	s = ft_strlen(src);
+// 	if (d >= dstsize)
+// 		return (dstsize + s);
+// 	i = 0;
+// 	while (i < dstsize - d - 1 && src[i] != '\0')
+// 	{
+// 		dst[d + i] = src[i];
+// 		i++;
+// 	}
+// 	dst[d + i] = '\0';
+// 	return (d + s);
+// }

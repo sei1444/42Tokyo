@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 19:08:31 by seono             #+#    #+#             */
-/*   Updated: 2023/05/30 17:37:51 by seono            ###   ########.fr       */
+/*   Updated: 2023/06/03 22:04:48 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <unistd.h>
 
 void ft_bzero(void *s, size_t n);
 int ft_isalnum(int c);
