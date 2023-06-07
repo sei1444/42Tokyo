@@ -6,17 +6,19 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 13:56:46 by marvin            #+#    #+#             */
-/*   Updated: 2023/06/03 19:39:38 by seono            ###   ########.fr       */
+/*   Updated: 2023/06/07 17:19:15 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    int n;
+	int	n;
 
-    n = ft_strlen(s);
-    write(fd, s, n);
-    write(fd, "\n", 1);
+	if (s == NULL)
+		return ;
+	n = ft_strlen(s);
+	write(fd, s, n);
+	write(fd, "\n", 1);
 }

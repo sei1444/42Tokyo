@@ -6,16 +6,18 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 13:55:55 by marvin            #+#    #+#             */
-/*   Updated: 2023/06/03 15:42:06 by seono            ###   ########.fr       */
+/*   Updated: 2023/06/07 17:19:00 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    int n;
+	int	n;
 
-    n = ft_strlen(s);
-    write(fd, s, n);
+	if (s == NULL)
+		return ;
+	n = ft_strlen(s);
+	write(fd, s, n);
 }

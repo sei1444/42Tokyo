@@ -6,52 +6,28 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:50:04 by seono             #+#    #+#             */
-/*   Updated: 2023/06/03 21:52:22 by seono            ###   ########.fr       */
+/*   Updated: 2023/06/07 19:38:44 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
-	size_t d;
-	size_t s;
+	size_t	i;
+	size_t	len_dst;
+	size_t	len_src;
 
-	d = ft_strlen(dst);
-	s = ft_strlen(src);
-	if (d >= dstsize)
-		return (dstsize + s);
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (len_dst >= dstsize)
+		return (dstsize + len_src);
 	i = 0;
-	while (i < dstsize - d - 1 && src[i] != '\0')
+	while (i < dstsize - len_dst - 1 && src[i] != '\0')
 	{
-		dst[d + i] = src[i];
+		dst[len_dst + i] = src[i];
 		i++;
 	}
-	dst[d + i] = '\0';
-	return (d + s);
+	dst[len_dst + i] = '\0';
+	return (len_dst + len_src);
 }
-
-//strlenでnull処理をしていないときにOKが出るバージョン
-
-// size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
-// {
-// 	size_t i;
-// 	size_t d;
-// 	size_t s;
-
-	// if (dst == NULL && dstsize == 0)
-	// 	return 0;
-// 	d = ft_strlen(dst);
-// 	s = ft_strlen(src);
-// 	if (d >= dstsize)
-// 		return (dstsize + s);
-// 	i = 0;
-// 	while (i < dstsize - d - 1 && src[i] != '\0')
-// 	{
-// 		dst[d + i] = src[i];
-// 		i++;
-// 	}
-// 	dst[d + i] = '\0';
-// 	return (d + s);
-// }

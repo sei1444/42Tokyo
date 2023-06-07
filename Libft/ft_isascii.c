@@ -6,13 +6,13 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 19:08:50 by seono             #+#    #+#             */
-/*   Updated: 2023/05/25 16:34:22 by seono            ###   ########.fr       */
+/*   Updated: 2023/06/07 15:43:11 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (0 <= c && c <= 127)
 		return (1);

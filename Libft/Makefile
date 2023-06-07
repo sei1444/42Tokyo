@@ -1,7 +1,6 @@
 NAME = libft.a
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
-#INC = -I./includes
 CC = cc
 CFLAG = -Wall -Wextra -Werror
 
