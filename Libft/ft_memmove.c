@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 18:04:09 by seono             #+#    #+#             */
-/*   Updated: 2023/06/07 17:42:57 by seono            ###   ########.fr       */
+/*   Updated: 2023/07/16 18:27:48 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (unsigned char *)src;
 	if (d == NULL && s == NULL)
 		return (NULL);
+	else if (len == 0)
+		return (dst);
 	cpymemory(d, s, len);
 	return (dst);
 }

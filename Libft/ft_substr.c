@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 21:36:48 by marvin            #+#    #+#             */
-/*   Updated: 2023/06/07 19:03:27 by seono            ###   ########.fr       */
+/*   Updated: 2023/07/16 16:46:29 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t			strlen;
 	char			*ptr;
 
+	if (s == NULL)
+		return (NULL);
 	strlen = ft_strlen(s);
 	if (start > strlen)
 		len = 0;

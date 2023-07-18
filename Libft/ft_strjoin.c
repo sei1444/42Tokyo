@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:36:12 by marvin            #+#    #+#             */
-/*   Updated: 2023/06/07 19:06:28 by seono            ###   ########.fr       */
+/*   Updated: 2023/07/16 19:42:06 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	int		ptrsize;
 	char	*ptr;
 
 	if (s1 == NULL)
 		return (NULL);
-	ptrsize = ft_strlen(s1) + ft_strlen(s2);
-	ptr = malloc(sizeof(char) * (ptrsize + 1));
+	ptr = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
