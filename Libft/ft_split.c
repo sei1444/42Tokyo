@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 21:48:00 by marvin            #+#    #+#             */
-/*   Updated: 2023/06/07 19:39:05 by seono            ###   ########.fr       */
+/*   Updated: 2023/07/19 19:10:50 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,19 @@ static int	getlength(char const *s, char c)
 {
 	int	i;
 	int	count;
-	int	flag;
 
 	i = 0;
-	while (s[i] == c)
-		i++;
 	count = 0;
-	flag = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] != '\0' && s[i] == c)
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+		}
+		else
 			i++;
-		while (s[i] != '\0' && s[i] != c)
-			i++;
-		count++;
 	}
 	return (count);
 }
@@ -42,8 +41,6 @@ static char	*getstring(char const *s, int start, int end)
 	tmpptr = malloc(sizeof(char) * (end - start + 1));
 	if (tmpptr == NULL)
 		return (NULL);
-	if (start == end)
-		return (NULL);
 	i = 0;
 	while (start + i < end)
 	{
@@ -52,6 +49,19 @@ static char	*getstring(char const *s, int start, int end)
 	}
 	tmpptr[i] = '\0';
 	return (tmpptr);
+}
+
+void freememory(char **arrptr, int count)
+{
+	int i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(arrptr[i]);
+		i++;
+	}
+	free(arrptr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -64,19 +74,27 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	arrptr = malloc(sizeof(char *) * (getlength(s, c) + 1));
-	if (arrptr == 0)
+	if (arrptr == NULL)
 		return (NULL);
 	i = 0;
 	count = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] != '\0' && s[i] == c)
+		if (s[i] != c)
+		{
+			start = i;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+			arrptr[count] = getstring(s, start, i);
+			if (arrptr[count] == NULL)
+			{
+				freememory(arrptr, count);
+				return (NULL);
+			}
+			count++;
+		}
+		else
 			i++;
-		start = i;
-		while (s[i] != '\0' && s[i] != c)
-			i++;
-		arrptr[count] = getstring(s, start, i);
-		count++;
 	}
 	arrptr[count] = NULL;
 	return (arrptr);
