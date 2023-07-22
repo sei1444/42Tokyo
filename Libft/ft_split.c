@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 21:48:00 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/19 19:10:50 by seono            ###   ########.fr       */
+/*   Updated: 2023/07/22 18:27:16 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ static char	*getstring(char const *s, int start, int end)
 	return (tmpptr);
 }
 
-void freememory(char **arrptr, int count)
+void	freememory(char **arrptr, int count)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < count)
@@ -64,20 +64,12 @@ void freememory(char **arrptr, int count)
 	free(arrptr);
 }
 
-char	**ft_split(char const *s, char c)
+char	**storestring(const char *s, char c, char **arrptr, int *count)
 {
-	int		i;
-	int		count;
-	int		start;
-	char	**arrptr;
+	int	i;
+	int	start;
 
-	if (s == NULL)
-		return (NULL);
-	arrptr = malloc(sizeof(char *) * (getlength(s, c) + 1));
-	if (arrptr == NULL)
-		return (NULL);
 	i = 0;
-	count = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -85,17 +77,34 @@ char	**ft_split(char const *s, char c)
 			start = i;
 			while (s[i] != '\0' && s[i] != c)
 				i++;
-			arrptr[count] = getstring(s, start, i);
-			if (arrptr[count] == NULL)
+			arrptr[*count] = getstring(s, start, i);
+			if (arrptr[*count] == NULL)
 			{
-				freememory(arrptr, count);
+				freememory(arrptr, *count);
 				return (NULL);
 			}
-			count++;
+			*count = *count + 1;
 		}
 		else
 			i++;
 	}
+	return (arrptr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**arrptr;
+
+	if (s == NULL)
+		return (NULL);
+	arrptr = malloc(sizeof(char *) * (getlength(s, c) + 1));
+	if (arrptr == NULL)
+		return (NULL);
+	count = 0;
+	arrptr = storestring(s, c, arrptr, &count);
+	if (arrptr == NULL)
+		return (NULL);
 	arrptr[count] = NULL;
 	return (arrptr);
 }
