@@ -10,7 +10,7 @@ $(NAME) : $(OBJS)
 		ar rc $(NAME) $(OBJS)
 
 .c.o: 
-		$(CC) $(CFLAG) $(INC) -c $< -o $@
+		$(CC) $(CFLAG) -c $< -o $@
 
 clean:
 		rm -f $(OBJS)
