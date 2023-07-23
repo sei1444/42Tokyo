@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 18:50:04 by seono             #+#    #+#             */
-/*   Updated: 2023/07/16 18:03:39 by seono            ###   ########.fr       */
+/*   Updated: 2023/07/23 17:12:08 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len_src = 0;
 	if (dst != NULL)
 		len_dst = ft_strlen(dst);
-		len_src = ft_strlen(src);
+	len_src = ft_strlen(src);
 	if (len_dst >= dstsize)
 		return (dstsize + len_src);
 	i = 0;

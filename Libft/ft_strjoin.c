@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:36:12 by marvin            #+#    #+#             */
-/*   Updated: 2023/07/19 20:00:27 by seono            ###   ########.fr       */
+/*   Updated: 2023/07/23 17:22:02 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*ptr;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
 	ptr = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (ptr == NULL)
 		return (NULL);
@@ -38,4 +36,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[i + j] = '\0';
 	return (ptr);
 }
-
