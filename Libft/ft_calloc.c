@@ -22,6 +22,6 @@ void	*ft_calloc(size_t count, size_t size)
 	memorysize = count * size;
 	ptr = malloc(memorysize);
 	if (ptr != NULL)
-		ft_memset(ptr, 0, memorysize);
+		ft_memset(ptr, '\0', memorysize);
 	return (ptr);
 }

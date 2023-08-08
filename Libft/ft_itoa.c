@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	str_size(long num)
+int	str_size(long num)
 {
 	int	count;
 
